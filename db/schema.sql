@@ -1,2 +1,2 @@
-DROP DATABASE IF EXITS 'boardgame_db';
+DROP DATABASE IF EXISTS 'boardgame_db';
 CREATE DATABASE 'boardgame_db';
