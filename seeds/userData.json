@@ -1,16 +1,13 @@
 [
-  {
-    "name": "Julian",
+  { "name": "Julian",
     "email": "jbear97@email.com",
     "password": "password1234"
   },
-  {
-    "name": "Ricky",
+  { "name": "Ricky",
     "email": "rickyiscool@email.com",
     "password": "clink24"
   },
-  {
-    "name": "Bubbles",
+  { "name": "Bubbles",
     "email": "ilovecats@email.com",
     "password": "shoppingcartsrock69"
   }
