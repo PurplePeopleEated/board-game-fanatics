@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const Project = require('../models/Projects');
 
+//GET request for home routes
 router.get('/', async (req, res) => {
     try{const projectData = await Project.findAll().catch((err) => { res.json(err);});
     const projects = projectData.map((project) => project.get({ plain: true }));
