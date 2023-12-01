@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const Project = require('../models/boardgame');
+const boardgame = require('../models/boardgame');
 
 //GET request for home routes
 router.get('/', async (req, res) => {
