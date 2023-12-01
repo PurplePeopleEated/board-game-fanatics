@@ -1,14 +1,14 @@
 const router = require('express').Router();
-const Project = require('../models/Projects');
+const Project = require('../models/boardgame');
 
 //GET request for home routes
 router.get('/', async (req, res) => {
-    try{const projectData = await Project.findAll().catch((err) => { res.json(err);});
-    const projects = projectData.map((project) => project.get({ plain: true }));
-        res.render('homepage', { projects });} 
+    try{const boardgameData = await Project.findAll().catch((err) => { res.json(err);});
+    const boardgame = boardgameData.map((boardgame) => boardgame.get({ plain: true }));
+        res.render('homepage', { boardgame });} 
     catch(err){res.status(500).json(err);};})
 
 router.get('/project/:id', async (req, res) => {
-    try{const projectData = await Project.findByPk(req.params.id,{include:{model:User}});   
-        projectData.get({plain: true});res.render('project', { projectData });} 
+    try{const boardgameData = await boardgame.findByPk(req.params.id,{include:{model:User}});   
+        boardgameData.get({plain: true});res.render('boardgame', { boardgameData });} 
     catch(err){res.status(500).json(err);};})
