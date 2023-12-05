@@ -1,7 +1,7 @@
-const router = require('express').Router();
+const userRouter = require('express').Router();
 const { User } = require('../../models');
 
-router.post('/api/users/login', async (req, res) => {
+userRouter.post('/api/users/login', async (req, res) => {
       // Find the user who matches the posted e-mail address
   try {const userData = await User.findOne({ where: { email: req.body.email } });
     if (!userData) {res.status(400).json({ message: 'Incorrect email or password, please try again' });
@@ -15,9 +15,9 @@ router.post('/api/users/login', async (req, res) => {
       res.json({ user: userData, message: 'You are now logged in!' });});
   } catch (err) {res.status(400).json(err);}});
 
-router.post('/api/users/logout', (req, res) => {
+userRouter.post('/api/users/logout', (req, res) => {
      // Remove the session variables
   if (req.session.logged_in) {req.session.destroy(() => {res.status(204).end();});
   } else {res.status(404).end();}});
 
-module.exports = router;
+module.exports = userRouter;
