@@ -22,6 +22,10 @@ max: {
   type: DataTypes.INTEGER,
   allowNull: false
 },
+timeToPlay: {
+  type: DataTypes.INTEGER,
+  allowNull: false
+},
 
 },
 {
