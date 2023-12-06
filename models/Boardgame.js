@@ -32,10 +32,8 @@ user_id: {
     model: 'user',
     key: 'id'
   }
-}
-},
-{
-sequelize,
+}},
+{sequelize,
 timestamps: false,
 freezeTableName: true,
 modelName: 'boardgame',

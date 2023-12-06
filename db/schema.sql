@@ -15,7 +15,7 @@ CREATE TABLE Boardgame (
   title VARCHAR(100) NOT NULL,
   min INT NOT NULL,
   max INT NOT NULL,
-  ttp INT NOT NULL,
+  timeToPlay INT NOT NULL,
   User_id INT,
   FOREIGN KEY(User_id)
   REFERENCES User(id)
@@ -25,5 +25,5 @@ CREATE TABLE Boardgame (
 INSERT INTO User (username, email, pass)
 VALUES ('Julian', 'jbear97@email.com', 'password1234');
 
-INSERT INTO Boardgame (title, min, max, ttp)
+INSERT INTO Boardgame (title, min, max, timeToPlay)
 VALUES ('sampletitle', 2, 6, 20);
