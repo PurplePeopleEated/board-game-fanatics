@@ -12,7 +12,7 @@ const seedDB = async () => {
   for (const game of gameData) {
     await Boardgame.create({
       ...game,
-      user_id: users[Math.floor(math.random() * users.length)].id
+      user_id: users[Math.floor(Math.random() * users.length)].id
     });
   } process.exit(0);
 };
