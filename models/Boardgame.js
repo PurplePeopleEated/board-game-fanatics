@@ -18,6 +18,10 @@ min: {
   type: DataTypes.INTEGER,
   allowNull: false
 },
+max: {
+  type: DataTypes.INTEGER,
+  allowNull: false
+},
 
 },
 {
