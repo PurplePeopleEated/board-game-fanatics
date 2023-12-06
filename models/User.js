@@ -26,7 +26,7 @@ pass: {
   type: DataTypes.STRING,
   allowNull: false,
   validate: {
-    len: [8, 20]
+    len: [8, 80]
   }
 }},
 {sequelize,
