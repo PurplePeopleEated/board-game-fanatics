@@ -14,6 +14,10 @@ title: {
   type: DataTypes.STRING,
   allowNull: false
 },
+min: {
+  type: DataTypes.INTEGER,
+  allowNull: false
+},
 
 },
 {
