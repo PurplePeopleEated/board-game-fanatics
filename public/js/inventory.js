@@ -8,7 +8,15 @@ const newGameHandler = async (event) => {
   const timeToPlay = document.getElementById('bg-ttp-new').value;
   
 console.log(title, min, max, timeToPlay);
+  if (title && min && max && timeToPlay) {
+    const response = await fetch('/api/boardgames/inventory', {
+      method: 'POST',
+      body: JSON.stringify({title, min, max, timeToPlay}),
+      headers: {'Content-Type': 'application/json'}
+    });
 
-};
+  if (response.ok) {document.location.reload();
+  } else {alert('Failed to add boardgame');}
+}};
 
 document.getElementById('btn-modal').addEventListener('click', newGameHandler);
