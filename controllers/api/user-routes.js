@@ -34,4 +34,12 @@ router.post('/logout', (req, res) => {
   if (req.session.logged_in) {req.session.destroy(() => {res.status(204).end();});
   } else {res.status(404).end();}});
 
+router.post('/form', async (req, res) => {
+  try {
+    const newUser = await User.create({...req.body, user_id: req.session.user_id});
+    console.log(newUser);
+    res.status(200).json(newUser);
+  } catch(err) {res.status(400).json(err);}
+});
+
 module.exports = router;
