@@ -4,7 +4,7 @@ const loginHandler = async (event) => {
   const email = document.getElementById('email-login');
   const pass = document.getElementById('pass-login');
 
-  if (email && password) {
+  if (email && pass) {
     const response = await fetch('/api/users/login', {
       method: 'POST',
       body: JSON.stringify({email, pass}),

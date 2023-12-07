@@ -8,4 +8,4 @@ const logoutHandler = async () => {
   } else {alert(response.statusText);
 }};
 
-document.querySelector('#logout').addEventListener('click', logoutHandler);
+// document.getElementById('logout').addEventListener('click', logoutHandler);
