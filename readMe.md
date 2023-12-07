@@ -14,15 +14,15 @@ As a BOARD GAME FANATIC, I want to track and manage my favorite board games so I
 
 ## Technology Used
 
--Javascript
--Node.js
--Express.js
--Handlebars.js
--Express-session
--MYSQL
--Granim
--Sequelize
--NPM
+- Javascript
+- Node.js
+- Express.js
+- Handlebars.js
+- Express-session
+- MYSQL
+- Granim
+- Sequelize
+- NPM
 
 ## Outline of Tasks
 
