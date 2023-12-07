@@ -24,13 +24,14 @@
     <section>
       <h2>Welcome back!</h2>
       <p>Enter your email and password to access your inventory.</p>
-      <div class = 'login-form'>
+      <div id = 'login-form'>
         <input id = 'email-login' type = 'text' placeholder = 'Your Email'>
         <input id = 'pass-login' type = 'text' placeholder = 'Your Password'>
         
         <button type = 'submit'>Submit</button>
-        <h6>Haven't made an account?</h6>
-        <a href = '/form'>Sign-Up</a>
+      </div>
+      <h6>Haven't made an account?</h6>
+      <a href = '/form'>Sign-Up</a>
     </section>
   </main>
   {{#if logged_in}}
