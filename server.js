@@ -10,6 +10,20 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+// Cookie
+const sess = {
+  secret: 'woah',
+  cookie: {},
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize
+  })
+};
+
+app.use(session(sess));
+
+// Tell Express what template engine it needs to use
 app.set('view engine', 'handlebars');
 app.set('views', path.join(__dirname, 'views'));
 app.engine('handlebars', handlebars({defaultLayout: false}));
