@@ -1,9 +1,8 @@
 const express = require('express');
 const session = require('express-session');
-// const routes = require('./controllers');
-const userRoutes = require("./controllers/api/user-routes.js");
-const homeRoutes = require("./controllers/home-routes.js");
+const routes = require('./controllers');
 const path = require('path');
+const handlebars = require('express-handlebars');
 
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -11,12 +10,13 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+// Cookie
 const sess = {
-  secret: 'Super secret secret',
+  secret: 'woah',
   cookie: {
     maxAge: 24 * 60 * 60 * 1000,
-    secure: false,
-    httpOnly: true,
+    // secure: false,
+    // httpOnly: true,
  },
   resave: false,
   saveUninitialized: true,
@@ -25,14 +25,19 @@ const sess = {
   })
 };
 
+app.use(session(sess));
+
+// Tell Express what template engine it needs to use
+app.set('view engine', 'handlebars');
+app.set('views', path.join(__dirname, 'views'));
+app.engine('handlebars', handlebars({defaultLayout: false}));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(session(sess));
 app.use(express.static(path.join(__dirname, 'public')));
-// app.use(routes);
-app.use(userRoutes);
-app.use(homeRoutes);
+
+app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening'));})
-  .catch((err) => console.error('Database synchronization error:', err));
+  app.listen(PORT, () => console.log(`Now listening at http://localhost:${PORT}`));
+});

@@ -1,14 +1,12 @@
-[
-  { "name": "Julian",
-    "email": "jbear97@email.com",
-    "password": "password1234"
-  },
-  { "name": "Ricky",
-    "email": "rickyiscool@email.com",
-    "password": "clink24"
-  },
-  { "name": "Bubbles",
-    "email": "ilovecats@email.com",
-    "password": "shoppingcartsrock69"
-  }
-]
+[{"username": "Julian",
+  "email": "jbear97@email.com",
+  "pass": "password1234"
+},
+{ "username": "Ricky",
+  "email": "rickyiscool@email.com",
+  "pass": "clink24"
+},
+{ "username": "Bubbles",
+  "email": "ilovecats@email.com",
+  "pass": "shoppingcartsrock69"
+}]

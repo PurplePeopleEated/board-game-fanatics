@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang = 'en'>
+<head>
+  <meta charset = 'UTF-8'>
+  <meta name = 'viewport' content = 'width = device-width, initial-scale = 1'>
+  <title>My Inventory</title>
+{{!-- links here --}}
+  <link rel = 'stylesheet' href = './css/jass.css'>
+  <link rel = 'stylesheet' href = './css/style.css'>
+</head>
+
+<body>
+  <main>
+    <header>
+      <h1><a href = '/'>BGF</a></h1>
+      <nav>
+        {{#if logged_in}}
+          <a href = '/inventory'>My Inventory</a>
+          <button id = 'logout'>Logout</button>
+        {{else}}
+          <a href = '/login'>Login</a>
+        {{/if}}
+      </nav>
+    </header>
+    
+    <section class = 'container'>
+      <h2>My Boardgames</h2>
+      {{#if boardgames.length}}
+      {{#each boardgames as |boardgame|}}
+        <div class = 'container bg-item'>
+          <h3 class = 'bg-title'>{{boardgame.title}}</h3>
+          <h3 class = 'bg-min'>{{boardgame.min}} - </h3>
+          <h3 class = 'bg-max'>{{boardgame.max}} players</h3>
+          <h3 class = 'bg-ttp'>{{boardgame.timeToPlay}} mins</h3>
+        </div>
+      {{/each}}
+      {{/if}}
+
+      {{!-- Add game modal --}}
+      <div class = 'modal'>
+        <div class = 'container modal-content' id = ''>
+          <span class = 'close'>&times;</span>
+
+          <input id = 'bg-title-new' type = 'text' placeholder = 'Title'>
+          <input id = 'bg-min-new' type = 'text' placeholder = 'Min Players'>
+          <input id = 'bg-max-new' type = 'text' placeholder = 'Max Players'>
+          <input id = 'bg-ttp-new' type = 'text' placeholder = 'Average Play Time'>
+          
+          <button id = 'btn-modal'>Add Game</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  {{#if logged_in}}
+  <script src = './js/logout.js'></script>
+  {{/if}}
+  <script src = './js/inventory.js'></script>
+</body>
+</html>

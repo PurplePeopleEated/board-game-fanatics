@@ -1,0 +1,36 @@
+header {
+  background-color: #202426;
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav,
+nav a,
+header h1 a,
+nav button {
+  color: #6C733d;
+  display: flex;
+  padding: 1rem;
+}
+
+button {
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+button:hover {
+  color: #f2f2f2;
+  text-decoration: underline;
+}
+
+.bg-item {
+  display: flex;
+  justify-content: space-around;
+}

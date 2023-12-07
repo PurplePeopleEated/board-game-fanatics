@@ -3,7 +3,7 @@
 <head>
   <meta charset = 'UTF-8'>
   <meta name = 'viewport' content = 'width = device-width, initial-scale = 1'>
-  <title>Homepage</title>
+  <title>Form</title>
 {{!-- links here --}}
   <link rel = 'stylesheet' href = './css/jass.css'>
   <link rel = 'stylesheet' href = './css/style.css'>
@@ -22,15 +22,25 @@
         {{/if}}
       </nav>
     </header>
-    
+
     <section class = 'container'>
-      <h2>Board Game Fanatics!</h2>
-      <p>Keep track of your large inventory of games with our help.</p>
-      <a href = '/form'>Get Started!</a>
+      <h2>Welcome, Fanatic!</h2>
+      <p>Fill out the form to start creating your inventory.</p>
+      <div id = 'signup-form'>
+        <input id = 'name-signup' type = 'text' placeholder = 'John'>
+        <input id = 'email-signup' type = 'text' placeholder = 'john27@email.com'>
+        <input id = 'pass-signup' type = 'text'  placeholder = 'Password123'>
+        
+        <button type = 'submit'>Submit</button>
+      </div>
+      <h6>Already have an account?</h6>
+      <a href = '/login'>Login</a>
     </section>
   </main>
+  
   {{#if logged_in}}
   <script src = './js/logout.js'></script>
   {{/if}}
+  <script src = './js/signup.js'></script>
 </body>
 </html>
