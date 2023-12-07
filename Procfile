@@ -1,0 +1,1 @@
+web: ./seeds/seed.js
