@@ -23,7 +23,7 @@
     
     <section>
       <h2>My Boardgames</h2>
-      <button class = 'btn-modal'>Add Game</button>
+      {{#if boardgames.length}}
       {{#each boardgames as |boardgame|}}
         <div class = 'container bg-item'>
           <h3 class = 'bg-title'>{{boardgame.title}}</h3>
@@ -32,16 +32,19 @@
           <h3 class = 'bg-ttp'>{{boardgame.timeToPlay}}</h3>
         </div>
       {{/each}}
+      {{/if}}
 
       {{!-- Add game modal --}}
       <div class = 'modal'>
-        <div class = 'container modal-content'>
+        <div class = 'container modal-content' id = ''>
           <span class = 'close'>&times;</span>
 
           <input id = 'bg-title-new' type = 'text'>
           <input id = 'bg-min-new' type = 'text'>
           <input id = 'bg-max-new' type = 'text'>
           <input id = 'bg-ttp-new' type = 'text'>
+          
+          <button id = 'btn-modal'>Add Game</button>
         </div>
       </div>
     </section>
@@ -49,5 +52,6 @@
   {{#if logged_in}}
   <script src = './js/logout.js'></script>
   {{/if}}
+  <script src = './js/inventory.js'></script>
 </body>
 </html>
