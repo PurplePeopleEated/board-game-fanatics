@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const {User, Boardgame} = require('../models');
 // Get routes
 router.get('/', async (req, res) => {
   try {
@@ -15,7 +16,17 @@ router.get('/login', async (req, res) => {
 
 router.get('/inventory', async (req, res) => {
   try {
-    res.render('inventory');
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: {exclude: ['password']},
+      include: [{model: Boardgame}]
+    });
+
+    const user = userData.get({plain: true});
+
+    res.render('inventory', {
+      ...user,
+      logged_in: true
+    });
   } catch(err) {res.status(500).json(err)}});
 
 router.get('/form', async (req, res) => {
