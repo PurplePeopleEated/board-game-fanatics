@@ -1,6 +1,10 @@
 {
   "name": "board-game-fanatics",
   "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "prestart": "node ./seeds/seed.js"
+  },
   "dependencies": {
     "connect-session-sequelize": "^7.0.4",
     "dotenv": "^8.2.0",
