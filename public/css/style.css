@@ -1,8 +1,15 @@
 header {
   background-color: #202426;
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
+  align-items: center;
 }
 
+nav,
 header h1 a,
 nav button {
   color: #6C733d;
+  display: flex;
+  padding: 1rem;
 }
