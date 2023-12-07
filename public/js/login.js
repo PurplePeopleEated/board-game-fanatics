@@ -1,15 +1,15 @@
 const signupHandler = async (event) => {
   event.preventDefault();
 
-  const name = document.getElementById('name-signup');
+  const username = document.getElementById('name-signup');
   const email = document.getElementById('email-signup');
   const pass = document.getElementById('pass-signup');
 
-  if (name && email && password) {
+  if (username && email && password) {
     const response = await fetch('/api/users', {
       method: 'POST',
-      body: JSON.stringify({name, email, pass}),
-      headers: {'Content-Type:': 'signup/json'}
+      body: JSON.stringify({username, email, pass}),
+      headers: {'Content-Type:': 'application/json'}
     });
     
     if (response.ok) {document.location.replace('/inventory');}
@@ -26,7 +26,7 @@ const loginHandler = async (event) => {
     const response = await fetch('/api/users/login', {
       method: 'POST',
       body: JSON.stringify({email, pass}),
-      headers: {'Content-Type': 'signup/json'}
+      headers: {'Content-Type': 'application/json'}
     });
     
     if (response.ok) {document.location.replace('/inventory');}
