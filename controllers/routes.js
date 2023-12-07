@@ -1,21 +1,21 @@
 const router = require('express').Router();
 // Get routes
-router.get('/', /*async*/ (req, res) => {
+router.get('/', async (req, res) => {
   try {
     res.render('homepage');
   } catch(err) {res.status(500).json(err)}});
 
-router.get('/login', /*async*/ (req, res) => {
+router.get('/login', async (req, res) => {
   try {
     res.render('login');
   } catch(err) {res.status(500).json(err)}});
 
-router.get('/inventory', /*async*/ (req, res) => {
+router.get('/inventory', async (req, res) => {
   try {
     res.render('inventory');
   } catch(err) {res.status(500).json(err)}});
 
-router.get('/form', /*async*/ (req, res) => {
+router.get('/form', async (req, res) => {
   try {
     res.render('form');
   } catch(err) {res.status(500).json(err)}});
