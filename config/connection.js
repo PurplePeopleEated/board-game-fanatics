@@ -4,7 +4,8 @@ require('dotenv').config();
 let sequelize;
 
 if (process.env.DATABASE_URL) {
-  const host = process.env.DATABASE_URL.split('//')[1].split(':')[0];
+  // const host = process.env.DATABASE_URL.split('//')[1].split(':')[0];
+  console.log(DATABASE_URL);
   sequelize = new Sequelize(process.env.DATABASE_URL, {
     dialect: 'mysql',
     protocol: 'mysql',
@@ -18,7 +19,7 @@ if (process.env.DATABASE_URL) {
     {
       host: 'localhost',
       dialect: 'mysql',
-      port: 3306
+      port: 5000
     }
   );
 }
