@@ -32,6 +32,18 @@
           <h3 class = 'bg-ttp'>{{boardgame.timeToPlay}}</h3>
         </div>
       {{/each}}
+
+      {{!-- Add game modal --}}
+      <div class = 'modal'>
+        <div class = 'container modal-content'>
+          <span class = 'close'>&times;</span>
+
+          <input id = 'bg-title-new' type = 'text'>
+          <input id = 'bg-min-new' type = 'text'>
+          <input id = 'bg-max-new' type = 'text'>
+          <input id = 'bg-ttp-new' type = 'text'>
+        </div>
+      </div>
     </section>
   </main>
 </body>
