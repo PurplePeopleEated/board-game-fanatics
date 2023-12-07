@@ -1,1 +1,1 @@
-web: node ./seeds/seed.js
+web: ./seeds/seed.js
