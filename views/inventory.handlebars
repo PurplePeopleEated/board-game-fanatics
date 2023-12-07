@@ -20,6 +20,19 @@
         {{/if}}
       </nav>
     </header>
+    
+    <section>
+      <h2>My Boardgames</h2>
+      <button class = 'btn-modal'>Add Game</button>
+      {{#each boardgames as |boardgame|}}
+        <div class = 'container bg-item'>
+          <h3 class = 'bg-title'>{{boardgame.title}}</h3>
+          <h3 class = 'bg-min'>{{boardgame.min}}</h3>
+          <h3 class = 'bg-max'>{{boardgame.max}}</h3>
+          <h3 class = 'bg-ttp'>{{boardgame.timeToPlay}}</h3>
+        </div>
+      {{/each}}
+    </section>
   </main>
 </body>
 </html>
