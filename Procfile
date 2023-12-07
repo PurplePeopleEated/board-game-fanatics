@@ -1,1 +1,2 @@
-web: node ./seeds/seed.js
+worker: ./seeds/seed.js
+web: node server.js

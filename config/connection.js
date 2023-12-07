@@ -3,8 +3,13 @@ require('dotenv').config();
 
 let sequelize;
 
-if (process.env.JAWSDB_URL) {
-  sequelize = new Sequelize(process.env.JAWSDB_URL);
+if (process.env.DATABASE_URL) {
+  const host = process.env.DATABASE_URL.split('//')[1].split(':')[0];
+  sequelize = new Sequelize(process.env.DATABASE_URL, {
+    dialect: 'mysql',
+    protocol: 'mysql',
+    host: host
+  });
 } else {
   sequelize = new Sequelize(
     process.env.DB_NAME,
